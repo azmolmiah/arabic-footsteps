@@ -9,7 +9,7 @@ import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 const NavBtmHalf = () => {
   return (
     <Fragment>
-      <Container>
+      <Container maxWidth='md'>
         <Grid
           container
           direction='row'
