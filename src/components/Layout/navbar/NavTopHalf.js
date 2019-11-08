@@ -28,6 +28,9 @@ const useStyles = makeStyles(theme => ({
   },
   list: {
     width: 250
+  },
+  logo: {
+    padding: '1rem 0'
   }
 }));
 
@@ -68,6 +71,7 @@ const NavTopHalf = () => {
                 <img
                   src='./img/arabicfootstepslogowhite.png'
                   alt='arabicfootstepslogowhite'
+                  className={classes.logo}
                 />
               </Grid>
               <Grid item>
