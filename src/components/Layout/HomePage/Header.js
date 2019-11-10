@@ -1,15 +1,17 @@
 import React from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles(() => ({
   root: {
-    background: 'url("/img/headerbg_1.jpeg") no-repeat',
+    background: 'url("/img/main.jpeg") no-repeat center center ',
     backgroundSize: 'cover',
-    padding: '10%'
+    padding: '10% 0',
+    boxShadow: 'inset 0 0 0 2000px rgba(0, 0, 0, 0.7)',
+    color: 'white'
   },
   Button: {
     fontSize: '1.5rem'
@@ -20,7 +22,8 @@ const Header = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Container maxWidth='lg'>
+      <Container maxWidth='md'>
+        <h1>Learn the Arabic language step by step!</h1>
         <Button size='large' variant='contained' className={classes.Button}>
           <EventAvailableIcon /> Book a class today
         </Button>
