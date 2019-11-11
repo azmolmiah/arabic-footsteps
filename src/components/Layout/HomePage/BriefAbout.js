@@ -8,7 +8,7 @@ import CastForEducationOutlinedIcon from '@material-ui/icons/CastForEducationOut
 
 const useStyles = makeStyles(() => ({
   root: {
-    padding: '3rem 0'
+    padding: '1.5rem 0'
   },
   img: {
     width: '100%',

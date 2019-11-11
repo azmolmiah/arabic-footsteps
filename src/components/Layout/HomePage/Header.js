@@ -11,10 +11,9 @@ const useStyles = makeStyles(() => ({
     backgroundSize: 'cover',
     padding: '10% 0',
     boxShadow: 'inset 0 0 0 2000px rgba(0, 0, 0, 0.7)',
-    color: 'white'
-  },
-  Button: {
-    fontSize: '1.5rem'
+    color: 'white',
+    fontSize: '1.5rem',
+    textTransform: 'uppercase'
   }
 }));
 
@@ -23,7 +22,7 @@ const Header = () => {
   return (
     <div className={classes.root}>
       <Container maxWidth='md'>
-        <h1>Learn the Arabic language step by step!</h1>
+        <h1>Understand Arabic</h1>
         <Button size='large' variant='contained' className={classes.Button}>
           <EventAvailableIcon /> Book a class today
         </Button>
