@@ -1,13 +1,15 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
 
+import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
 import CastForEducationOutlinedIcon from '@material-ui/icons/CastForEducationOutlined';
 
 const useStyles = makeStyles(() => ({
-  root: {},
+  root: {
+    padding: '3rem 0'
+  },
   img: {
     width: '100%',
     height: '100%'
@@ -19,8 +21,8 @@ const useStyles = makeStyles(() => ({
     fontSize: '3rem',
     color: '#253a52'
   },
-  studyOptions: {
-    padding: '1rem'
+  p: {
+    fontSize: '1.2rem'
   }
 }));
 
@@ -31,37 +33,35 @@ const BriefAbout = () => {
     <div className={classes.root}>
       <Container maxWidth='md'>
         <Grid container justify='center' alignItems='center'>
-          <Grid>
-            <h3>
-              Madinah Arabic Tuiton | Qualified Teachers | Comprehensive Study
-              Programme | Adults {'&'} Children
-            </h3>
-          </Grid>
-          <Grid container direction='row' justify='space-between'>
-            <Grid item lg={6} className={classes.studyOptions}>
-              <Grid container justify='flex-end' alignItems='center'>
-                <Grid>
-                  <RoomOutlinedIcon className={classes.icon} />
-                </Grid>
-                <Grid>
-                  <div className={classes.font}>In Class Tuition</div>
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item lg={6} className={classes.studyOptions}>
-              <Grid container justify='flex-start' alignItems='center'>
-                <Grid>
-                  <CastForEducationOutlinedIcon className={classes.icon} />
-                </Grid>
-                <Grid>
-                  <div className={classes.font}>On Screen Tuiton</div>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
           <Grid container direction='row' justify='center' alignItems='center'>
             <Grid item lg={9}>
-              <p>
+              {/* <Grid container direction='row' justify='space-between'>
+                <Grid item lg={6}>
+                  <Grid container justify='flex-start' alignItems='center'>
+                    <Grid>
+                      <RoomOutlinedIcon className={classes.icon} />
+                    </Grid>
+                    <Grid>
+                      <div className={classes.font}>In Class Tuition</div>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item lg={6}>
+                  <Grid container justify='flex-start' alignItems='center'>
+                    <Grid>
+                      <CastForEducationOutlinedIcon className={classes.icon} />
+                    </Grid>
+                    <Grid>
+                      <div className={classes.font}>On Screen Tuiton</div>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid> */}
+              <h3>
+                Madinah Arabic Tuiton | Qualified Teachers | Adults {'&'}{' '}
+                Children
+              </h3>
+              <p className={classes.p}>
                 Our tuition has been on offer at a localised level in and around
                 Nelson, U.K. during the last 10 years between 2009-2019,
                 however, now for the first time, we are opening up classes to
