@@ -13,10 +13,8 @@ const useStyles = makeStyles(() => ({
     padding: "3rem"
   },
   text: {
-    "&:hover": {
-      textDecoration: "underline",
-      textDecorationColor: "#253a52"
-    }
+    textDecoration: "underline",
+    textDecorationColor: "#253a52"
   },
   quote: {
     fontSize: "5rem",

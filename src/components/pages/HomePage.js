@@ -1,9 +1,8 @@
 import React, { Fragment } from "react";
 
-import Header from "../Layout/HomePage/Header";
-import InfoCards from "../Layout/HomePage/InfoCards";
-import Testimonials from "../Layout/HomePage/Testimonials";
-import Footer from "../Layout/Footer";
+import Header from "../layout/HomePage/Header";
+import InfoCards from "../layout/HomePage/InfoCards";
+import Testimonials from "../layout/HomePage/Testimonials";
 
 const HomePage = () => {
   return (
@@ -11,7 +10,6 @@ const HomePage = () => {
       <Header />
       <InfoCards />
       <Testimonials />
-      <Footer />
     </Fragment>
   );
 };
