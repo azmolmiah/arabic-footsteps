@@ -14,7 +14,6 @@ import TrendingUpIcon from "@material-ui/icons/TrendingUp";
 const useStyles = makeStyles(() => ({
   root: { padding: "5% 0" },
   card: {
-    maxWidth: 275,
     "&:hover": {
       backgroundColor: "#E0E0E0"
     },
@@ -37,15 +36,9 @@ const InfoCards = () => {
           justify="space-between"
           alignItems="center"
         >
-          <Grid item xs={12} lg={4}>
+          <Grid item lg={4}>
             <Card className={classes.card}>
-              <Box
-                border={0.5}
-                textAlign="center"
-                borderColor="grey.300"
-                p={1}
-                m={2}
-              >
+              <Box border={0.5} textAlign="center" borderColor="grey.300" m={2}>
                 <SchoolOutlinedIcon className={classes.icon} />
                 <h3>Qualified Teachers</h3>
                 <p>
@@ -55,15 +48,9 @@ const InfoCards = () => {
               </Box>
             </Card>
           </Grid>
-          <Grid item xs={12} lg={4}>
+          <Grid item lg={4}>
             <Card className={classes.card}>
-              <Box
-                border={0.5}
-                textAlign="center"
-                borderColor="grey.300"
-                p={1}
-                m={2}
-              >
+              <Box border={0.5} textAlign="center" borderColor="grey.300" m={2}>
                 <AccountBalanceWalletOutlinedIcon className={classes.icon} />
                 <h3>How much does it cost?</h3>
                 <p>
@@ -73,15 +60,9 @@ const InfoCards = () => {
               </Box>
             </Card>
           </Grid>
-          <Grid item xs={12} lg={4}>
+          <Grid item lg={4}>
             <Card className={classes.card}>
-              <Box
-                border={0.5}
-                textAlign="center"
-                borderColor="grey.300"
-                p={1}
-                m={2}
-              >
+              <Box border={0.5} textAlign="center" borderColor="grey.300" m={2}>
                 <PeopleAltOutlinedIcon className={classes.icon} />
                 <h3>Who we teach?</h3>
                 <p>
@@ -91,15 +72,9 @@ const InfoCards = () => {
               </Box>
             </Card>
           </Grid>
-          <Grid item xs={12} lg={4}>
+          <Grid item lg={4}>
             <Card className={classes.card}>
-              <Box
-                border={0.5}
-                textAlign="center"
-                borderColor="grey.300"
-                p={1}
-                m={2}
-              >
+              <Box border={0.5} textAlign="center" borderColor="grey.300" m={2}>
                 <TimelapseOutlinedIcon className={classes.icon} />
                 <h3>60 minute sessions</h3>
                 <p>
@@ -109,15 +84,9 @@ const InfoCards = () => {
               </Box>
             </Card>
           </Grid>
-          <Grid item xs={12} lg={4}>
+          <Grid item lg={4}>
             <Card className={classes.card}>
-              <Box
-                border={0.5}
-                textAlign="center"
-                borderColor="grey.300"
-                p={1}
-                m={2}
-              >
+              <Box border={0.5} textAlign="center" borderColor="grey.300" m={2}>
                 <CastForEducationOutlinedIcon className={classes.icon} />
                 <h3>Study arabic online</h3>
                 <p>
@@ -127,15 +96,9 @@ const InfoCards = () => {
               </Box>
             </Card>
           </Grid>
-          <Grid item xs={12} lg={4}>
+          <Grid item lg={4}>
             <Card className={classes.card}>
-              <Box
-                border={0.5}
-                textAlign="center"
-                borderColor="grey.300"
-                p={1}
-                m={2}
-              >
+              <Box border={0.5} textAlign="center" borderColor="grey.300" m={2}>
                 <TrendingUpIcon className={classes.icon} />
                 <h3>Progress Level</h3>
                 <p>
