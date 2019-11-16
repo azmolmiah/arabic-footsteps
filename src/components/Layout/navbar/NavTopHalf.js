@@ -70,8 +70,8 @@ const NavTopHalf = () => {
                   className={classes.logo}
                 />
               </Grid>
-              <Grid item>
-                <Button variant="contained" size="large">
+              <Grid item className="topNavBtn">
+                <Button variant="contained">
                   <EventAvailableIcon /> Book a class today
                 </Button>
               </Grid>
@@ -120,7 +120,7 @@ const NavTopHalf = () => {
             <List>
               {["Online Arabic", "Classroom Arabic", "Books", "Exercise"].map(
                 (text, index) => (
-                  <ListItem button key={text}>
+                  <ListItem button key={index}>
                     <ListItemText primary={text} />
                   </ListItem>
                 )
@@ -147,6 +147,11 @@ const NavTopHalf = () => {
             >
               <MenuIcon />
             </IconButton>
+            <img
+              className="logo-white"
+              src="../../../../img/arabicfootstepslogowhite.png"
+              alt="log"
+            />
           </Toolbar>
           <SwipeableDrawer
             anchor="top"

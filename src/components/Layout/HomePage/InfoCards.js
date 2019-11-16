@@ -68,7 +68,7 @@ const InfoCards = () => {
                 <h3>How much does it cost?</h3>
                 <p>
                   £60 payment just once every 12 weeks
-                  {" (based upon 1 class a week)"}.
+                  {" (based upon 1 class per week)"}.
                 </p>
               </Box>
             </Card>

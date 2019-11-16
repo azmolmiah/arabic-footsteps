@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
   root: {
     background: 'url("/img/main.jpeg") no-repeat center center ',
     backgroundSize: "cover",
-    padding: "3% 0 6% 0",
+    padding: "3% 0",
     boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.7)",
     color: "white",
     fontSize: "1.5rem",
@@ -22,7 +22,7 @@ const Header = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Container maxWidth="md">
+      <Container maxWidth="md" className="header-text">
         <Box textAlign="center">
           <h1>Welcome to Arabic Footsteps</h1>
         </Box>
@@ -34,7 +34,7 @@ const Header = () => {
             large via online platforms such as Skype and Zoom.
           </p>
         </Box>
-        <Box textAlign="center">
+        <Box textAlign="center" mb={4}>
           <Button size="large" variant="contained">
             Discover more
           </Button>

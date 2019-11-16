@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import Box from "@material-ui/core/Box";
 import Container from "@material-ui/core/Container";
@@ -8,7 +8,7 @@ import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 
 const NavBtmHalf = () => {
   return (
-    <Fragment>
+    <div className="btmNav">
       <Container maxWidth="md">
         <Grid
           container
@@ -28,7 +28,7 @@ const NavBtmHalf = () => {
           </Grid>
         </Grid>
       </Container>
-    </Fragment>
+    </div>
   );
 };
 

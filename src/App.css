@@ -1,7 +1,33 @@
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
   margin: 0;
+}
+
+@media only screen and (max-width: 500px) {
+  /* Nav */
+  .btmNav {
+    display: none;
+  }
+  .topNavBtn {
+    display: none;
+  }
+  .logo-white {
+    display: block;
+    width: 65%;
+    height: 2rem;
+    margin-left: auto;
+  }
+  /* Header */
+  .header-text {
+    font-size: large;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .logo-white {
+    display: none;
+  }
 }

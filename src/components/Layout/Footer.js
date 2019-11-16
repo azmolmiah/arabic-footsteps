@@ -16,7 +16,8 @@ const useStyles = makeStyles(() => ({
   },
   btmStrip: {
     backgroundColor: "rgba(0, 0, 0, 0.12)",
-    padding: "1% 0"
+    padding: "1% 0",
+    textAlign: "center"
   }
 }));
 
@@ -33,7 +34,7 @@ const Footer = () => {
           online platforms such as Skype and Zoom.
         </p>
         <Grid container>
-          <Grid item xs={12} lg={3}>
+          <Grid item xs={6} lg={3}>
             <List>
               {["Home", "About", "History", "Contact Us"].map((text, index) => (
                 <ListItem button key={index}>
@@ -43,7 +44,7 @@ const Footer = () => {
               <Divider />
             </List>
           </Grid>
-          <Grid item xs={12} lg={3}>
+          <Grid item xs={6} lg={3}>
             <List>
               {["Pricing", "FAQs", "Testimonials", "Places"].map(
                 (text, index) => (
@@ -55,7 +56,7 @@ const Footer = () => {
               <Divider />
             </List>
           </Grid>
-          <Grid item xs={12} lg={3}>
+          <Grid item xs={6} lg={3}>
             <List>
               {["Online Arabic", "Classroom Arabic", "Books", "Exercise"].map(
                 (text, index) => (
@@ -67,7 +68,7 @@ const Footer = () => {
               <Divider />
             </List>
           </Grid>
-          <Grid item xs={12} lg={3}>
+          <Grid item xs={6} lg={3}>
             <List>
               {["Online Arabic", "Classroom Arabic", "Books", "Exercise"].map(
                 (text, index) => (
