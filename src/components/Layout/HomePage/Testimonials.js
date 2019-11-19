@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -13,8 +14,7 @@ const useStyles = makeStyles(() => ({
     padding: "3rem"
   },
   text: {
-    textDecoration: "underline",
-    textDecorationColor: "#253a52"
+    "&:hover": { textDecoration: "underline", textDecorationColor: "#253a52" }
   },
   quote: {
     fontSize: "5rem",
@@ -32,8 +32,10 @@ const Testimonials = () => {
             <FormatQuoteIcon className={classes.quote} />
           </Box>
           <Box textAlign="center" className={classes.text}>
-            Since going to ArabicFootSteps, I now have the confidence to read
-            and speak the Arabic language.
+            <Link to="/testimonials">
+              Since going to ArabicFootSteps, I now have the confidence to read
+              and speak the Arabic language.
+            </Link>
           </Box>
         </Grid>
       </Container>

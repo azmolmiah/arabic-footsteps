@@ -1,17 +1,43 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import NavBar from "./components/layout/NavBar";
-import HomePage from "./components/pages/HomePage";
+import Home from "./components/pages/HomePage";
+import About from "./components/pages/AboutPage";
+import Contact from "./components/pages/ContactPage";
+import Pricing from "./components/pages/PricingPage";
+import Faqs from "./components/pages/FaqsPage";
+import Testimonials from "./components/pages/TestimonialsPage";
+import Teachers from "./components/pages/QualTeachersPage";
+import WhoWeTeach from "./components/pages/WhoWeTeachPage";
+import Sessions from "./components/pages/SessionsPage";
+import StudyOnline from "./components/pages/StudyOnlinePage";
+import Progress from "./components/pages/ProgressPage";
 import Footer from "./components/layout/Footer";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <HomePage />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <Switch>
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/pricing" component={Pricing} />
+          <Route exact path="/faqs" component={Faqs} />
+          <Route exact path="/testimonials" component={Testimonials} />
+          {/* Info card routes */}
+          <Route exact path="/teachers" component={Teachers} />
+          <Route exact path="/whoweteach" component={WhoWeTeach} />
+          <Route exact path="/sessions" component={Sessions} />
+          <Route exact path="/studyonline" component={StudyOnline} />
+          <Route exact path="/progress" component={Progress} />
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

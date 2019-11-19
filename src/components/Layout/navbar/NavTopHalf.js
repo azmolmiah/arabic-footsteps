@@ -1,4 +1,7 @@
 import React, { Fragment, useState } from "react";
+import { Link } from "react-router-dom";
+
+import NavLinks from "../NavLinks";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -6,10 +9,6 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Button from "@material-ui/core/Button";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -26,7 +25,21 @@ const useStyles = makeStyles(theme => ({
     width: 250
   },
   logo: {
-    padding: "1rem 0"
+    padding: "1rem 0",
+    [theme.breakpoints.down("xs")]: {
+      display: "block",
+      width: "60%",
+      height: "2rem",
+      margin: "auto"
+    },
+    [theme.breakpoints.up("md")]: {
+      display: "none"
+    }
+  },
+  topNavBtn: {
+    [theme.breakpoints.down("xs")]: {
+      display: "none"
+    }
   }
 }));
 
@@ -64,13 +77,15 @@ const NavTopHalf = () => {
               alignItems="center"
             >
               <Grid item>
-                <img
-                  src="./img/arabicfootstepslogowhite.png"
-                  alt="arabicfootstepslogowhite"
-                  className={classes.logo}
-                />
+                <Link to="/home">
+                  <img
+                    src="./img/arabicfootstepslogowhite.png"
+                    alt="arabicfootstepslogowhite"
+                    className={classes.logo}
+                  />
+                </Link>
               </Grid>
-              <Grid item className="topNavBtn">
+              <Grid item className={classes.topNavBtn}>
                 <Button variant="contained">
                   <EventAvailableIcon /> Book a class today
                 </Button>
@@ -81,54 +96,7 @@ const NavTopHalf = () => {
       </AppBar>
 
       <Container maxWidth="md">
-        <Grid container>
-          <Grid item xs={12} lg={3}>
-            <List>
-              {["Home", "About", "History", "Contact Us"].map((text, index) => (
-                <ListItem button key={text}>
-                  <ListItemText primary={text} />
-                </ListItem>
-              ))}
-              <Divider />
-            </List>
-          </Grid>
-          <Grid item xs={12} lg={3}>
-            <List>
-              {["Pricing", "FAQs", "Testimonials", "Places"].map(
-                (text, index) => (
-                  <ListItem button key={text}>
-                    <ListItemText primary={text} />
-                  </ListItem>
-                )
-              )}
-              <Divider />
-            </List>
-          </Grid>
-          <Grid item xs={12} lg={3}>
-            <List>
-              {["Online Arabic", "Classroom Arabic", "Books", "Exercise"].map(
-                (text, index) => (
-                  <ListItem button key={text}>
-                    <ListItemText primary={text} />
-                  </ListItem>
-                )
-              )}
-              <Divider />
-            </List>
-          </Grid>
-          <Grid item xs={12} lg={3}>
-            <List>
-              {["Online Arabic", "Classroom Arabic", "Books", "Exercise"].map(
-                (text, index) => (
-                  <ListItem button key={index}>
-                    <ListItemText primary={text} />
-                  </ListItem>
-                )
-              )}
-              <Divider />
-            </List>
-          </Grid>
-        </Grid>
+        <NavLinks />
       </Container>
     </div>
   );
@@ -148,8 +116,8 @@ const NavTopHalf = () => {
               <MenuIcon />
             </IconButton>
             <img
-              className="logo-white"
-              src="../../../../img/arabicfootstepslogowhite.png"
+              className={classes.logo}
+              src="./img/arabicfootstepslogowhite.png"
               alt="log"
             />
           </Toolbar>

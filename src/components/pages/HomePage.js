@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 
-import Header from "../layout/HomePage/Header";
-import InfoCards from "../layout/HomePage/InfoCards";
-import Testimonials from "../layout/HomePage/Testimonials";
+import Header from "../layout/homepage/Header";
+import InfoCards from "../layout/homepage/InfoCards";
+import Testimonials from "../layout/homepage/Testimonials";
 
 const HomePage = () => {
   return (

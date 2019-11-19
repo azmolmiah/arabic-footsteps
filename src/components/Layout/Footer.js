@@ -1,22 +1,22 @@
 import React from "react";
 
+import NavLinks from "./NavLinks";
+import SocialMedia from "./SocialMedia";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles(() => ({
   root: {
     backgroundColor: "#253a52",
-    padding: "5% 0 0 0",
+    paddingTop: "1rem",
     color: "white"
   },
   btmStrip: {
     backgroundColor: "rgba(0, 0, 0, 0.12)",
     padding: "1% 0",
+    marginTop: "1rem",
     textAlign: "center"
   }
 }));
@@ -26,62 +26,23 @@ const Footer = () => {
   return (
     <div className={classes.root}>
       <Container maxWidth="md">
-        <h1>Arabic Footsteps</h1>
-        <p>
-          During the last 10 years between 2009 till 2019, our tuition has been
-          on offer in classroom's, in Nelson and around the UK. However, for the
-          first time, we are now opening up classes to the public at large via
-          online platforms such as Skype and Zoom.
-        </p>
-        <Grid container>
-          <Grid item xs={6} lg={3}>
-            <List>
-              {["Home", "About", "History", "Contact Us"].map((text, index) => (
-                <ListItem button key={index}>
-                  <ListItemText primary={text} />
-                </ListItem>
-              ))}
-              <Divider />
-            </List>
+        <Grid container justify="space-between">
+          <Grid item xs={12} lg={5}>
+            <h1>Arabic Footsteps</h1>
+            During the last 10 years between 2009 till 2019, our tuition has
+            been on offer in classroom's, in Nelson and around the UK. However,
+            for the first time, we are now opening up classes to the public at
+            large via online platforms such as Skype and Zoom.
           </Grid>
-          <Grid item xs={6} lg={3}>
-            <List>
-              {["Pricing", "FAQs", "Testimonials", "Places"].map(
-                (text, index) => (
-                  <ListItem button key={index}>
-                    <ListItemText primary={text} />
-                  </ListItem>
-                )
-              )}
-              <Divider />
-            </List>
+          <Grid item xs={12} lg={3}>
+            <NavLinks />
           </Grid>
-          <Grid item xs={6} lg={3}>
-            <List>
-              {["Online Arabic", "Classroom Arabic", "Books", "Exercise"].map(
-                (text, index) => (
-                  <ListItem button key={index}>
-                    <ListItemText primary={text} />
-                  </ListItem>
-                )
-              )}
-              <Divider />
-            </List>
-          </Grid>
-          <Grid item xs={6} lg={3}>
-            <List>
-              {["Online Arabic", "Classroom Arabic", "Books", "Exercise"].map(
-                (text, index) => (
-                  <ListItem button key={index}>
-                    <ListItemText primary={text} />
-                  </ListItem>
-                )
-              )}
-              <Divider />
-            </List>
+          <Grid item xs={12} lg={3}>
+            <SocialMedia />
           </Grid>
         </Grid>
       </Container>
+
       <div className={classes.btmStrip}>
         <Container maxWidth="md">
           <Grid container justify="center">
