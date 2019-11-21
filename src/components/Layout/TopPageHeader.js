@@ -6,8 +6,10 @@ import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles(() => ({
   header: {
-    backgroundColor: "#253a52",
-    padding: "1.5rem",
+    background: 'url("/img/main.jpeg") no-repeat center center ',
+    backgroundSize: "cover",
+    boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.6)",
+    padding: "2rem",
     color: "white"
   }
 }));

@@ -118,7 +118,7 @@ const NavTopHalf = () => {
             <img
               className={classes.logo}
               src="./img/arabicfootstepslogowhite.png"
-              alt="log"
+              alt="logo"
             />
           </Toolbar>
           <SwipeableDrawer
