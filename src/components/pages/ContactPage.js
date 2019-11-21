@@ -9,7 +9,7 @@ import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   button: {
     width: "100%"
   },
@@ -20,28 +20,22 @@ const useStyles = makeStyles(theme => ({
 
 const ContactPage = () => {
   const classes = useStyles();
-  const { register, handleSubmit, setValue, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const [errMsg, setErrMsg] = useState("");
 
   const onSubmit = data => {
     console.log(data);
   };
 
-  const onChange = e => {
-    setValue([e.target.name], e.target.value);
-    setValue("message", e.target.value);
-  };
-
   useEffect(() => {
     register({
       name: "name",
-      required: true,
       pattern: /^[A-Za-z]+$/i,
       minLength: 2
     });
     register({
-      name: "email",
       required: true,
+      name: "email",
       pattern: /(.+)@(.+){2,}\.(.+){2,}/
     });
     register({ name: "message", required: true });
@@ -58,7 +52,8 @@ const ContactPage = () => {
               label="Name"
               className={classes.txtField}
               helpertext={errMsg}
-              onChange={onChange}
+              inputRef={register}
+              required
             />
             {errors.name &&
               errors.name.type === "minLength" &&
@@ -68,7 +63,8 @@ const ContactPage = () => {
               label="Email"
               className={classes.txtField}
               helpertext={errMsg}
-              onChange={onChange}
+              inputRef={register}
+              required
             />
             {errors.email && setErrMsg("This field is required")}
             <Box mt={2} mb={1} mr={1}>
@@ -80,7 +76,8 @@ const ContactPage = () => {
                 rows={3}
                 style={{ width: "100%" }}
                 helpertext={errMsg}
-                onChange={onChange}
+                ref={register}
+                required
               />
             </Box>
 
