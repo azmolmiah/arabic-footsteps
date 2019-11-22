@@ -28,8 +28,8 @@ const useStyles = makeStyles(theme => ({
     padding: "1rem 0",
     [theme.breakpoints.down("xs")]: {
       display: "block",
-      width: "60%",
-      height: "2rem",
+      width: "100%",
+      height: "auto",
       margin: "auto"
     },
     [theme.breakpoints.up("md")]: {
@@ -115,11 +115,13 @@ const NavTopHalf = () => {
             >
               <MenuIcon />
             </IconButton>
-            <img
-              className={classes.logo}
-              src="./img/arabicfootstepslogowhite.png"
-              alt="logo"
-            />
+            <Link to="/home">
+              <img
+                className={classes.logo}
+                src="./img/arabicfootstepslogowhite.png"
+                alt="logo"
+              />
+            </Link>
           </Toolbar>
           <SwipeableDrawer
             anchor="top"

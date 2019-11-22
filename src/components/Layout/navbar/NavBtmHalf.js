@@ -35,9 +35,11 @@ const NavBtmHalf = () => {
             </Box>
           </Grid>
           <Grid item>
-            <Button size="large" variant="contained" color="inherit">
-              <EventAvailableIcon /> Book a class today
-            </Button>
+            <Link to="/bookings">
+              <Button size="large" variant="contained" color="inherit">
+                <EventAvailableIcon /> Book a class today
+              </Button>
+            </Link>
           </Grid>
         </Grid>
       </Container>

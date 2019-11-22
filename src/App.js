@@ -13,6 +13,7 @@ import WhoWeTeach from "./components/pages/WhoWeTeachPage";
 import Sessions from "./components/pages/SessionsPage";
 import StudyOnline from "./components/pages/StudyOnlinePage";
 import Progress from "./components/pages/ProgressPage";
+import Bookings from "./components/pages/BookingsPage";
 import Footer from "./components/layout/Footer";
 import "./App.css";
 
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/pricing" component={Pricing} />
           <Route exact path="/faqs" component={Faqs} />
           <Route exact path="/testimonials" component={Testimonials} />
+          <Route exact path="/bookings" component={Bookings} />
           {/* Info card routes */}
           <Route exact path="/teachers" component={Teachers} />
           <Route exact path="/whoweteach" component={WhoWeTeach} />
