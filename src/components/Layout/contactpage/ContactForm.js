@@ -79,7 +79,7 @@ const ContactForm = () => {
             />
           )}
           <p>Please submit below if further information required.</p>
-          <form onSubmit={onSubmit} name="contact">
+          <form onSubmit={onSubmit} name="contact" action='/' data-netlify='true'>
             <TextField
               type="text"
               name="name"

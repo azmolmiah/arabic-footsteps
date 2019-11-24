@@ -39,11 +39,25 @@ const useFormValidation = (initialState, validate) => {
     setErrors(validationErrors);
   };
 
+  const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
   const onSubmit = e => {
     e.preventDefault();
     const validationErrors = validate(values);
     setErrors(validationErrors);
     setSubmitting(true);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...values })
+    })
+      .then(() => console.log("Success!"))
+      .catch(error => console.log(error));
+
   };
 
   return {
