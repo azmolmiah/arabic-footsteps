@@ -5,7 +5,7 @@ import TopPageHeader from "../layout/TopPageHeader";
 const FaqsPage = () => {
   return (
     <div>
-      <TopPageHeader text="Find FAQS here" />
+      <TopPageHeader text="Do you have a question?" />
     </div>
   );
 };

@@ -12,7 +12,7 @@ const NavLinks = () => {
       <Grid container>
         <Grid item xs={6} lg={5}>
           <List>
-            {["Home", "About", "Contact", "Bookings"].map((text, index) => (
+            {["Home", "About", "Contact"].map((text, index) => (
               <ListItem button key={index}>
                 <Link to={text.toLowerCase()}>
                   <ListItemText primary={text} />
@@ -23,7 +23,7 @@ const NavLinks = () => {
         </Grid>
         <Grid item xs={6} lg={5}>
           <List>
-            {["Online", "Pricing", "FAQ", "Testimonials"].map((text, index) => (
+            {["Online", "Pricing", "Testimonials"].map((text, index) => (
               <ListItem button key={index}>
                 <Link to={`/${text.toLowerCase()}`}>
                   <ListItemText primary={text} />

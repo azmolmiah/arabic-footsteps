@@ -12,9 +12,9 @@ const validateAuth = values => {
   } else if (values.name.length < 2) {
     errors.name = "Name must be more than 2 characters";
   }
-  //   Message errors
-  if (!values.message) {
-    errors.message = "Message Required";
+  //   Date errors
+  if (!values.date) {
+    errors.date = "Date Required";
   }
   return errors;
 };

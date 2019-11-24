@@ -78,7 +78,8 @@ const ContactForm = () => {
               ]}
             />
           )}
-          <form onSubmit={onSubmit}>
+          <p>Please submit below if further information required.</p>
+          <form onSubmit={onSubmit} name="contact">
             <TextField
               type="text"
               name="name"
@@ -111,7 +112,6 @@ const ContactForm = () => {
                 onChange={handleChange}
                 value={values.message}
                 onBlur={onBlur}
-                defaultValue={errors.message && errors.message}
               />
             </Box>
 

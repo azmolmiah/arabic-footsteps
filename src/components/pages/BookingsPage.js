@@ -1,13 +1,13 @@
 import React from "react";
 
 import TopPageHeader from "../layout/TopPageHeader";
-import Bookings from "../layout/bookingpage/Bookings";
+import BookingsForm from "../layout/bookingpage/BookingsForm";
 
 const BookingsPage = () => {
   return (
     <div>
       <TopPageHeader text="Book your class here" />
-      <Bookings />
+      <BookingsForm />
     </div>
   );
 };

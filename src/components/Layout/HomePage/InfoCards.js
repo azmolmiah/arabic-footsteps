@@ -64,7 +64,7 @@ const InfoCards = () => {
       header: "Study arabic online",
       text:
         "We will be now teaching online via Skype and Zoom to make classes available to everyone.",
-      link: "studyonline"
+      link: "online"
     },
     {
       icon: <TrendingUpIcon className={classes.icon} />,
