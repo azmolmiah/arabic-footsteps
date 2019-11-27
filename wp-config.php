@@ -55,6 +55,8 @@ define( 'SECURE_AUTH_SALT', '96cde6494445dd5ec08679e24dc2a3b5621570b3');
 define( 'LOGGED_IN_SALT',   '11353a0e9ba4be93d7021da475a59e9572d38ab8');
 define( 'NONCE_SALT',       'dc7344c19a5cd133a6ab80be563ee11b84835bcc');
 
+define('JWT_AUTH_SECRET_KEY', 'arabicfootsteps-secret-key');
+define('JWT_AUTH_CORS_ENABLE', true);
 /**#@-*/
 
 /**

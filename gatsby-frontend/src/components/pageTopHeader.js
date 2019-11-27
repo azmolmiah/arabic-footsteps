@@ -1,0 +1,32 @@
+import React, { Fragment } from "react"
+
+import { makeStyles } from "@material-ui/core/styles"
+import Container from "@material-ui/core/Container"
+
+const useStyles = makeStyles(theme => ({
+  header: {
+    background: 'url("/img/main.jpeg") no-repeat center center ',
+    backgroundSize: "cover",
+    boxShadow: "inset 0 0 0 2000px rgba(0, 0, 0, 0.6)",
+    padding: "2rem",
+    color: "white",
+    [theme.breakpoints.down("xs")]: {
+      padding: "0.5rem",
+    },
+  },
+}))
+
+const TopPageHeader = ({ text }) => {
+  const classes = useStyles()
+  return (
+    <Fragment>
+      <div className={classes.header}>
+        <Container maxWidth="md">
+          <h1>{text}</h1>
+        </Container>
+      </div>
+    </Fragment>
+  )
+}
+
+export default TopPageHeader
