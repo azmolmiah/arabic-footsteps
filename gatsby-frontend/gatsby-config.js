@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -113,6 +114,8 @@ module.exports = {
           "**/users",
           "**/menus",
           "**/features",
+          "**/favicon",
+          "**/logo",
         ],
         // Blacklisted routes using glob patterns
         excludedRoutes: ["**/posts/1456"],

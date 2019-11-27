@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, StaticQuery, Link } from "gatsby"
+import SocialMedia from "./SocialMedia"
 
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
@@ -7,7 +8,6 @@ import Grid from "@material-ui/core/Grid"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
-import Icon from "@material-ui/core/Icon"
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -61,7 +61,7 @@ const FooterMenu = () => {
                     {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(
                       item => (
                         <ListItem button key={item.title}>
-                          <Link to={item.object_slug}>
+                          <Link to={`/${item.object_slug}/`}>
                             <ListItemText primary={item.title} />
                           </Link>
                         </ListItem>
@@ -72,7 +72,9 @@ const FooterMenu = () => {
               />
             </List>
           </Grid>
-          <Grid item xs={12} lg={3}></Grid>
+          <Grid item xs={12} lg={3}>
+            <SocialMedia />
+          </Grid>
         </Grid>
       </Container>
 

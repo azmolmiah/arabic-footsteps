@@ -1,1 +1,0 @@
-<?php /* Template name: All page content  */ ?>

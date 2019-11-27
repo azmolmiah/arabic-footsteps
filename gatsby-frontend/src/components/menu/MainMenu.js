@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react"
 import { graphql, StaticQuery, Link } from "gatsby"
+import Logo from "../Logo"
 
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
@@ -12,6 +13,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
+import Box from "@material-ui/core/Box"
 
 const useStyles = makeStyles(theme => ({
   menuButton: {
@@ -23,17 +25,9 @@ const useStyles = makeStyles(theme => ({
   list: {
     width: 250,
   },
-  logo: {
-    padding: "1rem 0",
-    [theme.breakpoints.down("xs")]: {
-      width: "100%",
-      height: "auto",
-      margin: "auto",
-    },
-  },
   topNavBtn: {
     [theme.breakpoints.down("xs")]: {
-      display: "none",
+      flexWrap: "wrap",
     },
   },
 }))
@@ -65,12 +59,8 @@ const MainMenu = () => {
       <AppBar position="static" className={classes.bg}>
         <Toolbar>
           <Container maxWidth="md">
-            <Link to="/home">
-              <img
-                src="./img/arabicfootstepslogowhite.png"
-                alt="arabicfootstepslogowhite"
-                className={classes.logo}
-              />
+            <Link to="/home/">
+              <Logo alt="arabicfootstepslogowhite" />
             </Link>
           </Container>
         </Toolbar>
@@ -78,42 +68,42 @@ const MainMenu = () => {
 
       <Container maxWidth="md">
         <Grid container>
-          <Grid item xs={6} lg={5}>
-            <List>
-              <StaticQuery
-                query={graphql`
-                  {
-                    allWordpressWpApiMenusMenusItems(
-                      filter: { name: { eq: "Main menu" } }
-                    ) {
-                      edges {
-                        node {
-                          name
-                          items {
-                            title
-                            object_slug
-                          }
+          <List>
+            <StaticQuery
+              query={graphql`
+                {
+                  allWordpressWpApiMenusMenusItems(
+                    filter: { name: { eq: "Main menu" } }
+                  ) {
+                    edges {
+                      node {
+                        name
+                        items {
+                          title
+                          object_slug
                         }
                       }
                     }
                   }
-                `}
-                render={props => (
-                  <div>
+                }
+              `}
+              render={props => (
+                <div>
+                  <Box display="flex" className={classes.topNavBtn}>
                     {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(
                       item => (
                         <ListItem button key={item.title}>
-                          <Link to={item.object_slug}>
+                          <Link to={`/${item.object_slug}/`}>
                             <ListItemText primary={item.title} />
                           </Link>
                         </ListItem>
                       )
                     )}
-                  </div>
-                )}
-              />
-            </List>
-          </Grid>
+                  </Box>
+                </div>
+              )}
+            />
+          </List>
         </Grid>
       </Container>
     </div>
@@ -129,7 +119,7 @@ const MainMenu = () => {
             justify="space-between"
             alignItems="center"
           >
-            <Grid>
+            <Grid item xs={2}>
               <Toolbar>
                 <IconButton
                   edge="start"
@@ -142,13 +132,9 @@ const MainMenu = () => {
                 </IconButton>
               </Toolbar>
             </Grid>
-            <Grid>
-              <Link to="/home">
-                <img
-                  className={classes.logo}
-                  src="./img/arabicfootstepslogowhite.png"
-                  alt="logo"
-                />
+            <Grid item xs={9} lg={4}>
+              <Link to="/home/">
+                <Logo alt="arabicfootstepslogowhite" className={classes.logo} />
               </Link>
             </Grid>
           </Grid>
