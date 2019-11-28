@@ -19,6 +19,32 @@ const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
+  .featureCards {
+    box-shadow: "none !important";
+  }
+  .featureCards:hover {
+    background-color: "#E0E0E0 !important";
+  }
+  @media only screen and (max-width: 400px) {
+    .navMob {
+      flex-wrap: wrap !important;
+    }
+    .socialMedia {
+      justify-content: center !important;
+    }
+    .logo {
+      display: "block !important";
+      width: "70% !important";
+      height: "auto !important";
+      margin-left: "auto !important";
+    }
+  }
+  @media only screen and (min-width: 400px) {
+    .headerLogo {
+      width: "50% !important";
+      height: "auto";
+    }
+  }
 `
 
 const Layout = ({ children }) => (

@@ -24,29 +24,35 @@ export default ({ pageContext }) => (
   <Layout>
     <Container maxWidth="md" style={{ padding: "1rem 0" }}>
       {pageContext.posts.map(post => (
-        <div key={post.node.wordpress_id}>
-          <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} />
-          <small>{post.node.date}</small>
-          <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
-          <Button variant="contained" color="default">
-            <Link to={`/post/${post.node.slug}`}>Read more</Link>
-          </Button>
-        </div>
+        <Container>
+          <div key={post.node.wordpress_id}>
+            <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} />
+            <small>{post.node.date}</small>
+            <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+            <Button variant="contained" color="default">
+              <Link to={`/post/${post.node.slug}`}>Read more</Link>
+            </Button>
+          </div>
+        </Container>
       ))}
-      <Pagination>
-        {Array.from({ length: pageContext.numberOfPages }).map(
-          (page, index) => (
-            <PageNumberWrapper
-              key={index}
-              isCurrentPage={index + 1 === pageContext.currentPage}
-            >
-              <PageNumber to={index === 0 ? "/blog" : `/blog/${index + 1}`}>
-                {index + 1}
-              </PageNumber>
-            </PageNumberWrapper>
-          )
-        )}
-      </Pagination>
+
+      <Container>
+        <hr style={{ margin: "1rem 0" }} />
+        <Pagination>
+          {Array.from({ length: pageContext.numberOfPages }).map(
+            (page, index) => (
+              <PageNumberWrapper
+                key={index}
+                isCurrentPage={index + 1 === pageContext.currentPage}
+              >
+                <PageNumber to={index === 0 ? "/blog" : `/blog/${index + 1}`}>
+                  {index + 1}
+                </PageNumber>
+              </PageNumberWrapper>
+            )
+          )}
+        </Pagination>
+      </Container>
     </Container>
   </Layout>
 )

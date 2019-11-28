@@ -2,31 +2,17 @@ import React from "react"
 import { graphql, StaticQuery, Link } from "gatsby"
 import SocialMedia from "./SocialMedia"
 
-import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
 import Grid from "@material-ui/core/Grid"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
 
-const useStyles = makeStyles(() => ({
-  root: {
-    backgroundColor: "#253a52",
-    paddingTop: "1rem",
-    color: "white",
-  },
-  btmStrip: {
-    backgroundColor: "rgba(0, 0, 0, 0.12)",
-    padding: "1% 0",
-    marginTop: "1rem",
-    textAlign: "center",
-  },
-}))
-
 const FooterMenu = () => {
-  const classes = useStyles()
   return (
-    <div className={classes.root}>
+    <div
+      style={{ backgroundColor: "#253a52", paddingTop: "1rem", color: "white" }}
+    >
       <Container maxWidth="md">
         <Grid container justify="space-between">
           <Grid item xs={12} lg={5}>
@@ -78,7 +64,14 @@ const FooterMenu = () => {
         </Grid>
       </Container>
 
-      <div className={classes.btmStrip}>
+      <div
+        style={{
+          backgroundColor: "rgba(0, 0, 0, 0.12)",
+          padding: "1% 0",
+          marginTop: "1rem",
+          textAlign: "center",
+        }}
+      >
         <Container maxWidth="md">
           <Grid container justify="center">
             <h5>All rights reserved {new Date().getFullYear()}</h5>

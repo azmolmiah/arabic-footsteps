@@ -6,19 +6,8 @@ import BackgroundImage from "gatsby-background-image"
 import Button from "@material-ui/core/Button"
 import Container from "@material-ui/core/Container"
 import Box from "@material-ui/core/Box"
-import { makeStyles } from "@material-ui/core/styles"
-
-const useStyles = makeStyles(theme => ({
-  img: {
-    [theme.breakpoints.down("xs")]: {
-      width: "100% !important",
-      height: "auto",
-    },
-  },
-}))
 
 const Header = () => {
-  const classes = useStyles()
   return (
     <StaticQuery
       query={graphql`
@@ -67,11 +56,11 @@ const Header = () => {
               <Container maxWidth="md" className="header-text">
                 <Box textAlign="center">
                   <Img
-                    className={classes.img}
+                    className="headerLogo"
                     fluid={data.writing.childImageSharp.fluid}
                     alt=""
                     style={{
-                      width: "50%",
+                      maxWidth: "500px",
                       height: "auto",
                       margin: "0 auto 2rem auto",
                     }}

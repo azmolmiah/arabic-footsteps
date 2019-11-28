@@ -1,44 +1,26 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from "react"
 
 // Material UI resources
-import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
-import TextField from "@material-ui/core/TextField";
-import TextareaAutosize from "@material-ui/core/TextareaAutosize";
-import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
-import Snackbar from "@material-ui/core/Snackbar";
-import IconButton from "@material-ui/core/IconButton";
-import CloseIcon from "@material-ui/icons/Close";
+import Container from "@material-ui/core/Container"
+import TextField from "@material-ui/core/TextField"
+import TextareaAutosize from "@material-ui/core/TextareaAutosize"
+import Box from "@material-ui/core/Box"
+import Button from "@material-ui/core/Button"
+import Snackbar from "@material-ui/core/Snackbar"
+import IconButton from "@material-ui/core/IconButton"
+import CloseIcon from "@material-ui/icons/Close"
 
 // Custom hooks
-import useFormValidation from "./useFormValidation";
-import validateAuth from "./validateAuth";
-
-const useStyles = makeStyles(theme => ({
-  close: {
-    padding: theme.spacing(0.5)
-  },
-  success: {
-    backgroundColor: "#43a047"
-  },
-  button: {
-    width: "100%"
-  },
-  textField: {
-    width: "100%"
-  }
-}));
+import useFormValidation from "./useFormValidation"
+import validateAuth from "./validateAuth"
 
 const initialState = {
   name: "",
   email: "",
-  message: ""
-};
+  message: "",
+}
 
 const ContactForm = () => {
-  const classes = useStyles();
-
   const {
     onSubmit,
     handleChange,
@@ -48,8 +30,8 @@ const ContactForm = () => {
     isSubmitting,
     success,
     open,
-    handleClose
-  } = useFormValidation(initialState, validateAuth);
+    handleClose,
+  } = useFormValidation(initialState, validateAuth)
 
   return (
     <Fragment>
@@ -59,7 +41,7 @@ const ContactForm = () => {
             <Snackbar
               anchorOrigin={{
                 vertical: "top",
-                horizontal: "center"
+                horizontal: "center",
               }}
               open={open}
               autoHideDuration={6000}
@@ -70,21 +52,22 @@ const ContactForm = () => {
                   key="close"
                   aria-label="close"
                   color="inherit"
-                  className={classes.close}
+                  style={{ padding: 0.5 }}
                   onClick={handleClose}
                 >
                   <CloseIcon />
-                </IconButton>
+                </IconButton>,
               ]}
             />
           )}
-          <p>Please submit below if further information required.</p>
-          <form onSubmit={onSubmit} name="contact" action='/' data-netlify='true'>
+          <p>Fill in the form to book your place!</p>
+          <form onSubmit={onSubmit} name="contact" data-netlify="true">
+            <input type="hidden" name="contact" value="contact" />
             <TextField
               type="text"
               name="name"
               label="Name"
-              className={classes.textField}
+              style={{ width: "100%" }}
               onChange={handleChange}
               value={values.name}
               onBlur={onBlur}
@@ -95,7 +78,7 @@ const ContactForm = () => {
               type="email"
               name="email"
               label="Email"
-              className={classes.textField}
+              style={{ width: "100%" }}
               onChange={handleChange}
               value={values.email}
               onBlur={onBlur}
@@ -119,7 +102,7 @@ const ContactForm = () => {
               disabled={isSubmitting}
               type="submit"
               variant="contained"
-              className={classes.button}
+              style={{ width: "100%" }}
             >
               Send
             </Button>
@@ -127,7 +110,7 @@ const ContactForm = () => {
         </Box>
       </Container>
     </Fragment>
-  );
-};
+  )
+}
 
-export default ContactForm;
+export default ContactForm
